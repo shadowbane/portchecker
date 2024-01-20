@@ -10,7 +10,6 @@ use crate::app::traits::check_result::CheckResult;
 mod app;
 
 const APP_NAME: &str = "PortChecker";
-const VERSION: f64 = 0.1;
 const DEVELOPER: &str = "Adly Shadowbane <adly.shadowbane@gmail.com>";
 
 fn main() {
@@ -189,7 +188,9 @@ fn parse_tries(number: &str) -> u8 {
 }
 
 fn version() {
-    println!("{} v{} by {}", APP_NAME, VERSION, DEVELOPER);
+    let version = option_env!("PROJECT_VERSION").unwrap_or(env!("CARGO_PKG_VERSION"));
+    let hash = option_env!("GIT_HASH").unwrap_or("1");
+    println!("{} v{}-{} by {}", APP_NAME, version, hash, DEVELOPER);
 }
 
 fn tagline() {
