@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "ping-cp"
+name = "portchecker"
 version = "0.1.0"
