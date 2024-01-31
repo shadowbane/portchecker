@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.7] - 2024-01-31
+
+### Changed
+
+- Fixed build version
+
 ## [0.2.6] - 2024-01-31
 
 ### Changed
@@ -61,6 +67,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [unreleased]: https://github.com/shadowbane/portchecker/compare/v0.1.0...HEAD
 
+[0.2.7]: https://github.com/shadowbane/portchecker/releases/compare/v0.2.6...v0.2.7
 [0.2.6]: https://github.com/shadowbane/portchecker/releases/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/shadowbane/portchecker/releases/compare/v0.2.4...v0.2.5
 [0.2.4]: https://github.com/shadowbane/portchecker/releases/compare/v0.2.3...v0.2.4

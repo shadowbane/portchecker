@@ -180,9 +180,13 @@ fn parse_tries(number: &str) -> u8 {
 }
 
 fn version() {
-    let version = option_env!("PROJECT_VERSION").unwrap_or(env!("CARGO_PKG_VERSION"));
+    let mut version: &str = option_env!("PROJECT_VERSION").unwrap_or(env!("CARGO_PKG_VERSION"));
     let hash = option_env!("GIT_HASH").unwrap_or("1");
-    println!("{} v{}-{} by {}", APP_NAME, version, hash, DEVELOPER);
+    let short = hash.chars().take(7).collect::<String>();
+
+    version = version.trim_start_matches('v');
+
+    println!("{} v{}-{} by {}", APP_NAME, version, short, DEVELOPER);
 }
 
 fn tagline() {
