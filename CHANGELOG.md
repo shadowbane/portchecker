@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.4] - 2024-01-31
+
+### Changed
+
+- Changed build tool for linux to cargo-zigbuild
+
 ## [0.2.3] - 2024-01-31
 
 ### Changed
@@ -43,6 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [unreleased]: https://github.com/shadowbane/portchecker/compare/v0.1.0...HEAD
 
+[0.2.4]: https://github.com/shadowbane/portchecker/releases/compare/v0.2.3...v0.2.4
 [0.2.3]: https://github.com/shadowbane/portchecker/releases/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/shadowbane/portchecker/releases/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/shadowbane/portchecker/releases/compare/v0.2.0...v0.2.1
