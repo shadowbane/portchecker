@@ -50,7 +50,10 @@ impl CheckResult<PingResult> for PingResults {
             return 0.0; // or handle this case as needed
         }
 
-        let total_ttl: u64 = successful_results.iter().map(|r| r.ttl.as_millis() as u64).sum();
+        let total_ttl: u64 = successful_results
+            .iter()
+            .map(|r| r.ttl.as_millis() as u64)
+            .sum();
         let average_ttl = total_ttl as f64 / successful_results.len() as f64;
 
         // Round to three digits

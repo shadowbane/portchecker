@@ -4,8 +4,10 @@ use crate::app::dto::ping_result::SuccessField;
 pub trait HasFailedResults<T> {
     fn results(&self) -> &Vec<T>;
 
-    fn failed_results(&self) -> Vec<&T> where T: SuccessField {
+    fn failed_results(&self) -> Vec<&T>
+        where
+            T: SuccessField,
+    {
         self.results().iter().filter(|r| !r.success()).collect()
     }
 }
-

@@ -4,8 +4,7 @@ use std::process::exit;
 use std::time::{Duration, Instant};
 
 use app::dto::ping_result::{PingResult, PingResults};
-
-use crate::app::traits::check_result::CheckResult;
+use app::traits::check_result::CheckResult;
 
 mod app;
 
@@ -22,25 +21,23 @@ fn main() {
     let port: u16;
 
     match &args.len() {
-        2 => {
-            match String::from(&args[1]).as_str() {
-                "--help" => {
-                    version();
-                    tagline();
-                    help();
-                    exit(0);
-                }
-                "--version" => {
-                    version();
-                    exit(0);
-                }
-                _ => {
-                    println!("Invalid number of argument supplied");
-                    help();
-                    exit(1);
-                }
+        2 => match String::from(&args[1]).as_str() {
+            "--help" => {
+                version();
+                tagline();
+                help();
+                exit(0);
             }
-        }
+            "--version" => {
+                version();
+                exit(0);
+            }
+            _ => {
+                println!("Invalid number of argument supplied");
+                help();
+                exit(1);
+            }
+        },
         3 => {
             host = &args[1];
             port = parse_port(&args[2]);
@@ -63,14 +60,12 @@ fn main() {
         }
     }
 
-    println!("Host is {} and port is {} with timeout of {}s for {} number of tries", &host, &port, &timeout, &tries);
-
-    let ping_results: PingResults = is_port_open(
-        host,
-        port,
-        timeout,
-        tries,
+    println!(
+        "Host is {} and port is {} with timeout of {}s for {} number of tries",
+        &host, &port, &timeout, &tries
     );
+
+    let ping_results: PingResults = is_port_open(host, port, timeout, tries);
 
     // println!("Check Result");
     println!("{:<15} {:>10}", "Success", ping_results.received());
@@ -82,9 +77,6 @@ fn main() {
 }
 
 fn is_port_open(host: &str, port: u16, timeout: u8, tries: u8) -> PingResults {
-    // let host = "103.124.196.181";
-    // let host = "login.microsoftonline.com";
-    // let port: u16 = 443;
     let mut ping_results: PingResults = PingResults {
         results: Vec::new(),
     };
