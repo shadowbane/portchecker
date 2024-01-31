@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: taiki-e/upload-rust-binary-action@v1
         env:
-          PROJECT_VERSION=${{ github.ref_name }}
+          PROJECT_VERSION: ${{ github.ref_name }}
         with:
           bin: "portchecker"
           target: ${{ matrix.target }}
